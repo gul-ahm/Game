@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ThoughtForge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="view"></canvas>
+  <canvas id="ink"></canvas>
+
+  <div id="hud" hidden>
+    <div class="panel left glass">
+      <div class="who">VEY <small>Will Bearer</small></div>
+      <div class="meter"><label>HEALTH</label><div class="track"><i id="hp" class="hp"></i></div><span id="hpText"></span></div>
+      <div class="meter"><label>WILL</label><div class="track"><i id="will" class="will"></i></div><span id="willText"></span></div>
+    </div>
+
+    <div class="panel mid">
+      <div id="wave"></div>
+      <div id="left"></div>
+    </div>
+
+    <div class="panel right">
+      <div id="score"></div>
+      <div id="sub"></div>
+    </div>
+
+    <div id="goals" class="glass"></div>
+    <div id="legend"></div>
+    <div id="cast"><b id="castTitle"></b><span id="castForm"></span></div>
+    <div id="toasts"></div>
+    <div id="banner"><div id="bannerTitle"></div><div id="bannerSub"></div></div>
+    <div id="pops"></div>
+    <div id="hit"></div>
+  </div>
+
+  <section id="menu" class="screen">
+    <h1>THOUGHT<span>FORGE</span></h1>
+    <p class="tag">Draw it. Will it. Wield it.</p>
+    <div class="row">
+      <button id="playground" class="btn">Playground</button>
+      <button id="trial" class="btn alt">Trial</button>
+    </div>
+    <p id="record" class="small"></p>
+    <div id="guide"></div>
+    <ul class="keys">
+      <li><b>Left drag</b> Draw a shape</li>
+      <li><b>W A S D</b> Move</li>
+      <li><b>Shift</b> Run</li>
+      <li><b>Space</b> Jump</li>
+      <li><b>Right drag, Q, E</b> Turn camera</li>
+      <li><b>Wheel</b> Zoom</li>
+      <li><b>P</b> Pause</li>
+      <li><b>M</b> Sound</li>
+    </ul>
+  </section>
+
+  <section id="paused" class="screen" hidden>
+    <h2>Paused</h2>
+    <button id="resume" class="btn">Resume</button>
+    <button id="quit" class="ghost">Main menu</button>
+  </section>
+
+  <section id="over" class="screen" hidden>
+    <h2>Will Broken</h2>
+    <div id="final">0</div>
+    <div id="newBest" hidden>New best score</div>
+    <div id="stats"></div>
+    <div class="row">
+      <button id="retry" class="btn">Try Again</button>
+      <button id="home" class="ghost">Main menu</button>
+    </div>
+  </section>
+
+  <script src="dist/game.js"></script>
+</body>
+</html>
