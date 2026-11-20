@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Starfall Arena</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="view"></canvas>
+
+  <div id="hud" hidden>
+    <div class="panel left glass">
+      <div class="meter"><label>HULL</label><div class="track"><i id="hull" class="hull"></i></div></div>
+      <div class="meter"><label>SHIELD</label><div class="track"><i id="shield" class="shield"></i></div></div>
+      <div class="meter"><label>DASH</label><div class="track thin"><i id="dash" class="dash"></i></div></div>
+      <div class="meter"><label>WELL</label><div class="track thin"><i id="well" class="well"></i></div></div>
+      <div id="boost" class="meter" hidden><label>BOOST</label><div class="track thin"><i id="boostBar" class="boost"></i></div></div>
+      <div id="hullText"></div>
+      <div id="build"></div>
+    </div>
+
+    <div class="panel mid">
+      <div id="sector"></div>
+      <div id="wave"></div>
+      <div id="left"></div>
+      <div id="bossWrap" hidden>
+        <label>THE WARDEN</label>
+        <div class="track"><i id="bossBar" class="boss"></i></div>
+      </div>
+    </div>
+
+    <div class="panel right">
+      <div id="score">0</div>
+      <div id="combo"></div>
+      <div id="credits"></div>
+    </div>
+
+    <canvas id="radar" width="160" height="160"></canvas>
+    <div id="toasts"></div>
+
+    <div class="xpRow">
+      <span id="level">LV 1</span>
+      <div class="track thin"><i id="xp" class="xp"></i></div>
+    </div>
+
+    <div id="banner"><div id="bannerTitle"></div><div id="bannerSub"></div></div>
+    <div id="hit"></div>
+  </div>
+
+  <section id="menu" class="screen">
+    <h1>STARFALL <span>ARENA</span></h1>
+    <p class="tag">Hold the arena. Collect crystals. Upgrade your ship. Beat the Warden.</p>
+    <div id="modes"></div>
+    <p id="modeNote" class="small"></p>
+    <button id="start" class="btn">Launch</button>
+    <div class="row">
+      <button id="openHangar" class="ghost">Hangar</button>
+      <button id="openMedals" class="ghost">Medals</button>
+    </div>
+    <p class="small"><span id="menuBest"></span> &nbsp;|&nbsp; <span class="wallet gold"></span></p>
+    <ul class="keys">
+      <li><b>W A S D</b> Move</li>
+      <li><b>Mouse</b> Aim</li>
+      <li><b>Click</b> Fire</li>
+      <li><b>Space</b> Dash</li>
+      <li><b>Right click or Q</b> Gravity well</li>
+      <li><b>P</b> Pause</li>
+      <li><b>M</b> Sound</li>
+    </ul>
+  </section>
+
+  <section id="hangar" class="screen" hidden>
+    <h2>Hangar</h2>
+    <p class="small">Permanent ship parts. Bought with credits from your runs. <span class="wallet gold"></span></p>
+    <div id="shop" class="grid"></div>
+    <button class="ghost back">Back</button>
+  </section>
+
+  <section id="medals" class="screen" hidden>
+    <h2>Medals</h2>
+    <p id="medalCount" class="small"></p>
+    <div id="medalList" class="grid"></div>
+    <button class="ghost back">Back</button>
+  </section>
+
+  <section id="upgrade" class="screen" hidden>
+    <h2 id="offerTitle">Level Up</h2>
+    <p id="offerNote" class="small"></p>
+    <div id="cards"></div>
+  </section>
+
+  <section id="paused" class="screen" hidden>
+    <h2>Paused</h2>
+    <div id="pauseBuild" class="small"></div>
+    <button id="resume" class="btn">Resume</button>
+    <button id="quit" class="ghost">Quit to menu</button>
+  </section>
+
+  <section id="over" class="screen" hidden>
+    <h2>Ship Destroyed</h2>
+    <div class="result">
+      <div id="rank">D</div>
+      <div>
+        <div id="final">0</div>
+        <div id="newBest" class="gold" hidden>New best score</div>
+      </div>
+    </div>
+    <div id="stats"></div>
+    <p id="gotMedals" class="gold small"></p>
+    <div class="row">
+      <button id="retry" class="btn">Play Again</button>
+      <button id="toMenu" class="ghost">Menu</button>
+    </div>
+  </section>
+
+  <script src="dist/game.js"></script>
+</body>
+</html>
