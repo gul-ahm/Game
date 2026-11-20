@@ -1,0 +1,17 @@
+{
+  "name": "starfall-arena",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/main.js --bundle --minify --format=iife --outfile=dist/game.js",
+    "dev": "esbuild src/main.js --bundle --sourcemap --format=iife --outfile=dist/game.js --watch --servedir=.",
+    "test": "node --test test/unit.test.mjs && node test/sim.mjs"
+  },
+  "dependencies": {
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}
